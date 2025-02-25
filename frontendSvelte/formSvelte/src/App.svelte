@@ -13,7 +13,7 @@
   async function sendData(event) {
     event.preventDefault();
     try {
-      const res = await fetch("http://localhost:3080/utente", {
+      const res = await fetch("https://tpi-2.vercel.app/utente", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ nome, cognome, data, sesso, skills }),
@@ -44,7 +44,7 @@
 
   async function getDati() {
     try {
-      const response = await fetch("http://localhost:3080/utente");
+      const response = await fetch("https://tpi-2.vercel.app/utente");
       dati = await response.json();
     } catch (error) {
       responseMessage = "Errore di connessione al server";
